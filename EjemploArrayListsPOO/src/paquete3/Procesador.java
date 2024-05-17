@@ -12,6 +12,11 @@ public class Procesador {
 
     private String marca;
     private double costo;
+    
+    public Procesador(String s, double c){
+        marca = s;
+        costo = c;
+    }
 
     public void establecerMarca(String m) {
         marca = m;

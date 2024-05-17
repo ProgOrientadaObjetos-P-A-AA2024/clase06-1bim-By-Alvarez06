@@ -29,5 +29,31 @@ public class Venta {
     public double obtenerValorVenta(){
         return valorVenta;
     }
+    
+    @Override
+    public String toString(){
+        String cadena = "\nVenta Total:\n";
+        for (int i = 0; i < computadoras.size(); i++) {
+            cadena = String.format("""
+                               %sComputadora #%d: %s
+                               Procesador: %s
+                               Costo Procesador: %.2f$    
+                               Memoria: %s
+                               Costo Memoria: %.2f$
+                               Costo Computador: %.2f$\n
+                               """, 
+                    cadena, (i + 1),
+                    computadoras.get(i).obtenerMarca(), 
+                    computadoras.get(i).obtenerProcesador().obtenerMarca(),
+                    computadoras.get(i).obtenerProcesador().obtenerCosto(),
+                    computadoras.get(i).obtenerMemoria().obtenerMarca(),
+                    computadoras.get(i).obtenerMemoria().obtenerCosto(),
+                    computadoras.get(i).obtenerCostoComputador());
+            
+        }
+        
+        cadena = String.format("%sCosto Total de Venta: %.2f$", cadena, valorVenta);
+        return cadena;
+    }
 
 }
