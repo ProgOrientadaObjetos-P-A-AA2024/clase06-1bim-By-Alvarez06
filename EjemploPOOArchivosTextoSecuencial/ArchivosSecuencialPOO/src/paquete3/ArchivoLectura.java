@@ -79,6 +79,8 @@ public class ArchivoLectura {
                 String profesor = linea_partes.get(2);
 
                 ArrayList<String> cadenaProfesor = new ArrayList<>(
+                        // Para designar como separador cualquier caracter 
+                        // distinto de ", ;" se usa \\(caracter)
                         Arrays.asList(profesor.split("\\|")));
                 // ["Tara Hernandez", "contratado"]
                 //        0                 1
