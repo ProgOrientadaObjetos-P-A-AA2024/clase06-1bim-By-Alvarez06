@@ -57,7 +57,8 @@ public class ArchivoEscritura {
         try {
             salidaArchivo = new Formatter(new FileWriter(rutaArchivo, true));
             Profesor p = obtenerRegistro();
-            
+            // Obtiene el objeto de tipo profesor y lo escribe en el archivo
+            // especificado en la ruta
             String cadenaRegistro = String.format("%s;%s",
                     p.obtenerNombre(), p.obtenerTipo());
             
